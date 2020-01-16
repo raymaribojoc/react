@@ -1,0 +1,2 @@
+197 runnning- retal dteail, retal listingpage, bootstrap add
+redux architure

@@ -1,0 +1,25 @@
+//import * as redux from 'redux';
+import { adReducer, selectedAdReducer } from './ad-reducer';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import { authReducer } from './auth-reducer';
+import { userBookingsReducer } from './booking-reducer';
+
+import { reducer as formReducer } from 'redux-form';
+
+export const init = () => {
+        const reducer = combineReducers({
+            ads: adReducer,
+            ad: selectedAdReducer,
+            form: formReducer,
+            auth: authReducer,
+            userBookings: userBookingsReducer
+
+        });
+
+        const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+    
+        const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
+
+        return store;
+    }

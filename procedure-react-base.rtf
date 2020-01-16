@@ -1,0 +1,257 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1053{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fmodern Lucida Console;}}
+{\colortbl ;\red0\green0\blue255;\red255\green0\blue0;\red0\green77\blue187;}
+{\*\generator Riched20 10.0.17763}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1 {\b\f0\fs28\lang29{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=S75fOiGGdCk }}{\fldrslt{https://www.youtube.com/watch?v=S75fOiGGdCk\ul0\cf0}}}}\b\f0\fs28\lang1053\par
+firstpage -   rental/component/rentalcard.js\par
+download   bwm-react\b0\par
+1.npm install \par
+-- node download--- the  latest.. and recommended\par
+run \par
+\par
+\b note public index.html root and the index.js in src(play important role in the very start ofthe application\b0\par
+\tab npm run start-dev\line run everything to avoid errors, mongo, aws, server, client\par
+jsx standard...... i am a compoent\par
+\tab everything we are writing in react are javascript no html\par
+\par
+after the creation of react workspace(from a copied format form github or by react creation-- see google.com how to create\par
+1. npm install --save bootstrap@4.0.0 jquery@3.3.1 popper.js@1.14.3\par
+dont start the service,  and remove everyting in app.css\par
+and go to index.js  and import bootstrap\par
+\tab import 'bootstrap/dist/bootstrap.min.css' ;    which is located in  node_modules\line\tab\tab run application\par
+\tab\tab remove app.css its content\par
+\tab\tab remove index.css its content\par
+\tab\tab\b\i go to index.js and import 'bootstrap/dist/css/bootstrap.min.css'\par
+run application\par
+\par
+\b0\i0 create folder, shared and file Header.js  \b import React from 'react';\par
+after it go to app.js and  import \{Header\} from './shared/Header';\par
+\b0\tab\tab <header />\par
+\tab\tab <Footer />\par
+\tab\par
+create  show header\par
+-------------\par
+class app - have a render component\par
+and function app- received data and dont do much complicated function\par
+\par
+ install another package after creating a temp. header\par
+sass- fancy css\par
+174\par
+\b npm install --save node-sass-chokidar@1.2.2 npm-run-all@4.1.2\b0\par
+ after the installation, go to package json and insert  "build-css": "node-sass-chokidar ./src -o ./src",\par
+    "watch-css": "npm run build-css && node-sass-chokidar ./src -o ./src --watch --recursive",\par
+    "start-js": "react-scripts start",\par
+    "start": "npm start --prefix server",\par
+    "start-dev": "npm-run-all -p watch-css start-js",\par
+    "build-js": "react-scripts build",\par
+    "build": "npm-run-all build-css build-js",\par
+    "test": "react-scripts test --env=jsdom",\par
+    "eject": "react-scripts eject"\par
+   \b ....................in scripts---\par
+create file App.scss\par
+\b0 creates \b styles \b0 folder  and create _main.scss and _variables.scss file\par
+-varriables\par
+\tab $main-color: #61dafb;\line\tab $main-text-gray-color: #484848;\line\tab $light-gray-color: #a9a9a9;\line\tab $main-black-color: #20232a;\line\tab $main-white-color: #ededed;\line\tab $light-gray-color-2: #dedada\par
+\tab and import this to _main.scss  @import  'variables.scss';\par
+\tab\par
+\tab\b and import again _main.scss to app.scss\par
+\tab\tab @import 'styles/main.scss';\b0\par
+they are partial files.  underscore file are partial file, these will be imported\par
+\par
+\b npm install --save react-router-dom@4.2.2\par
+\tab\b0\par
+\tab\par
+\par
+   change the config.--- \b dev.js\par
+\tab\cf2 rayswesau@yahoo.com.ph  mongodb -atlas-- password animmal246\cf0\par
+\i mlab or mongo-atlas\par
+mongodb+srv://ray123:<password>@cluster0-cr3ih.mongodb.net/test?retryWrites=true&w=majority\par
+\i0\par
+\cf3 user raya- password 246() this is used only in the altlas mongodb\par
+aws.com rayswesau@yahoo.com.ph   use by angular\par
+\cf2\fs36 aws.com mjessavaldez@gmail.com   ----- react  password Animal246\par
+\par
+rayswesau@yahoo.com.ph mongodb use by react\par
+\cf3 -\cf2 mongodb --- raymaribojoc@gmail.com angular\cf3 .\par
+---------------\fs28 aws- sign up--\par
+\cf2 Access Key ID:\par
+Access Key ID:\par
+AKIAJAZWTX2ZWSTIVTNQ\par
+Secret Access Key:\par
+i3EcYYWzydkwx8CiKIpY4JoodfReM2zBDT8aB+5S\par
+-------\par
+npm\cf0  install --save multer multer-s3 aws-sdk\par
+\par
+178\par
+create compoment\par
+\tab this is the format\par
+\tab\tab\cf2 import React from 'react';\line\tab\tab export function RentalCard() \{\par
+\tab\tab\tab return \{\par
+\tab\tab\tab\}\par
+\tab\tab\}\par
+\cf0\par
+\tab create folder \cf2 rental\cf0 , then \cf2 RentalCard.js\par
+\cf0\tab\tab <div class='col-md-3 col-xs-6'>\par
+        <div class='card bwm-card'>\par
+          <img class='card-img-top' src='{{\field{\*\fldinst{HYPERLINK http://via.placeholder.com/350x250 }}{\fldrslt{http://via.placeholder.com/350x250\ul0\cf0}}}}\f0\fs28 ' alt=''></img>\par
+          <div class='card-block'>\par
+\sub\-\-\-\-\-\-\-\nosupersub             <h6 class='card-subtitle'>Whole Apartment &#183; New York</h6>\par
+            <h4 class='card-title'>Some nice apartment</h4>\par
+            <p class='card-text'>$240 per Night &#183; Free Cancelation</p>\par
+            <a href='' class='card-link'>More Info</a>\par
+          </div>\par
+        </div>\par
+      </div>\par
+go to app.js file \par
+\tab\cf2 import \{ RentalCard \} from './components/rental/RentalCard';\par
+and remove some code in app.js\par
+\tab and dont forget to write  <RentalCard />\cf0\par
+\par
+create a folder in styles/\par
+\tab create rental folder, create _rental-listing.scss and copy  some css into it\line\tab @import  'rental/rental-listing.scss into _main.scss\par
+\par
+\cf2 179 rental list, state, props, render\par
+wrap the \cf0  the cope in separate file called RentalList.js\par
+\tab import React from  'react';\par
+export class Rentalist extends React.Component \{\par
+    render() \{\par
+        return (\par
+        )\par
+    \}\par
+\}\cf2\par
+busit wala masave animal\par
+uising mlab\par
+raya  \par
+animal1234()\par
+basereact-- mlab\par
+ DB_URI: 'mongodb://raya:animal1234()@ds151817.mlab.com:51817/base-react'\par
+206 ok\cf0\par
+207 routes\par
+208 endpoints\par
+209 error  handlinh\par
+210 woring routes rental\par
+211 detail and map\par
+axios \par
+npm install --save axios\par
+212 get rental from server\par
+\tab\tab\par
+213 - proxy, cors explantion\par
+\tab error , must be allowed\tab\par
+\tab\tab solution  - proxy\par
+\par
+\cf2 214 WORKING AT LAST------\par
+--------------------\cf0\b0\f1 $ npm install --save axios\par
+npm WARN ajv-keywords@3.2.0 requires a peer of ajv@^6.0.0 but none is installed.                                                                                             You must install peer dependencies yourself.\par
+npm WARN react-google-maps@9.4.5 requires a peer of @types/googlemaps@^3.0.0 but                                                                                             none is installed. You must install peer dependencies yourself.\par
+npm WARN react-google-maps@9.4.5 requires a peer of @types/markerclustererplus@^                                                                                            2.1.29 but none is installed. You must install peer dependencies yourself.\par
+npm WARN react-google-maps@9.4.5 requires a peer of @types/react@^15.0.0 || ^16.                                                                                            0.0 but none is installed. You must install peer dependencies yourself.\par
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules\\fse                                                                                            vents):\par
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@                                                                                            1.2.4: wanted \{"os":"darwin","arch":"any"\} (current: \{"os":"win32","arch":"x64"\}                                                                                            )\par
+\cf2\b\f0 -------------------\par
+215 \par
+npm insta  titleize --save\par
+\par
+copy and paste the resource file  \par
+install font awesome\par
+npm install --save font-awesome\par
+\cf0 and apply the css file, import it to index.js(main)\line import 'font-awesome/css/font-awesome.min.css';\par
+\par
+216-react google map in internet,,, search for it\par
+npm install --save react-google-maps@9.4.5\par
+skip this is not necessary\par
+\cf2\par
+\par
+\cf0 217  helper \line import \{ titleize \} from 'titleize';\par
+\cf2\par
+/*const adType = (isShared => \{\par
+      if (isShared) \{\par
+        return 'shared';\par
+    \} else \{\par
+        return 'entire'\par
+    \}\par
+    return isShared ? 'shared' : 'entire';\par
+\} */\par
+//same as\par
+export const adType = isShared => isShared ? 'shared' : 'entire';\par
+export const toUpperCase = value => value ? titleize(value) : ''\par
+\cf0 <h2 className=\{`ad-type $\{ad.category\}`\}>\{adType(ad.shared)\}   - colorize  backslash quote\par
+note: for 217 shared condo\par
+\cf2 218 google map\par
+react google map  - github\par
+npm install --save react-google-maps@9.4.5\par
+import \{\par
+  withScriptjs,\par
+  withGoogleMap,\par
+  GoogleMap,\par
+  Marker,\par
+\} from "react-google-maps";\par
+\par
+const MapWithAMarker = withScriptjs(withGoogleMap(props =>\par
+  <GoogleMap\par
+    defaultZoom=\{8\}\par
+    defaultCenter=\{\{ lat: -34.397, lng: 150.644 \}\}\par
+  >\par
+    <Marker\par
+      position=\{\{ lat: -34.397, lng: 150.644 \}\}\par
+    />\par
+  </GoogleMap>\par
+));\par
+\par
+<MapWithAMarker\par
+  googleMapURL="{\cf0{\field{\*\fldinst{HYPERLINK https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places }}{\fldrslt{https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places\ul0\cf0}}}}\f0\fs28 "\par
+  loadingElement=\{<div style=\{\{ height: `100%` \}\} />\}\par
+  containerElement=\{<div style=\{\{ height: `400px` \}\} />\}\par
+  mapElement=\{<div style=\{\{ height: `100%` \}\} />\}\par
+/>\par
+create a map folder in, paste it and export themapwithmaker\par
+219\cf0  google api key\par
+create your own key\par
+{{\field{\*\fldinst{HYPERLINK https://console.developers.google.com/apis/dashboard?pli=1&project=bukid-1551960856587&folder=&organizationId= }}{\fldrslt{https://console.developers.google.com/apis/dashboard?pli=1&project=bukid-1551960856587&folder=&organizationId=\ul0\cf0}}}}\f0\fs28\par
+myreact -- created in  googledashboard for api key\par
+dashboard- enable services - map javascrip\par
+manage-- go to credential and copy your api key\line\cf2 AIzaSyAVh4LskjrTzv-7JHnEVryP1GRuUoq1sN8\par
+enable and disable  (some interesting topic)\par
+\cf0 220 high order and compositio\par
+error wit this code: \cf2\line   componentWillMount() \{\par
+    //this.props.alertUser();\par
+    this.props.dispatch\cf0 (actions.fetchAds());\par
+  \}\par
+220\par
+\cf2 hoc and compostion\par
+\cf0 222 googlemap\par
+\cf2 --------------------217\par
+\par
+\cf0\fs40 forgot google \cf2 map as of now\par
+\par
+218\par
+\fs20 219 composition vs inheritance see react documentation\par
+220 deo map--- not interested\par
+221 geo code\par
+222 google not intrested\par
+223 caching geo code google api\par
+224 goolge map\par
+\cf0\fs28\par
+-------------------------------------\par
+217 running-------------------------- reactmaster21continue\par
+218  hoc higher component\par
+high order components is a function that takes a cmponent and returns a new function\par
+hocs are common in third party react libraris such as redux , connect and relays create fragmentContainer\par
+219 composition vs inheritance\par
+speciialization  sometimes we think about component as being special cases of other components. for example we might say we welcome dialog is  a special case Dialog.\par
+220 geolocation\par
+\par
+\tab location as a props\par
+221 geo 222\par
+223 caching\par
+224caching, refrancto, promises\par
+225 error in a map 226\par
+227--- authentication\par
+\cf2 server side\par
+229authentication, registration, jwt,middleware\par
+\par
+\par
+\par
+\par
+\cf0\b0\par
+\par
+}
+ 
